@@ -8,7 +8,7 @@ const ComponentsScreen = () => {
     return (
         <View>
         <Text style={styles.textStyle}>Welcome!</Text>
-        <Text style={styles.textStyle}>My name is {name}</Text>
+        <Text style={styles.SubHeader}>My name is {name}</Text>
         </View>
     );
 };
