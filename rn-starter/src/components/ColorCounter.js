@@ -1,4 +1,4 @@
-import React , {useState} from "react";
+import React from "react";
 import { Text, StyleSheet, View, Button} from "react-native";
 
 const ColorCounter = ({ color, onIncrease, onDecrease }) => {

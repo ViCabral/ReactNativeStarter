@@ -1,5 +1,5 @@
 import React , {useState} from "react";
-import { Text, StyleSheet, View, Button} from "react-native";
+import { StyleSheet, View} from "react-native";
 import ColorCounter from '../components/ColorCounter';
 
 const SquareScreen = () => {
@@ -9,6 +9,7 @@ const COLOR_INCREMENT = 20;
   const [Red, setRed] = useState(0);
   const [Green, setGreen] = useState(0);
   const [Blue, setBlue] = useState(0);
+  
 
   const setColor = (color, change) => {
 

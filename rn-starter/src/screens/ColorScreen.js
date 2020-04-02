@@ -1,5 +1,5 @@
 import React , {useState} from "react";
-import { Text, StyleSheet, View, Button, FlatList } from "react-native";
+import { StyleSheet, View, Button, FlatList } from "react-native";
 
 const ColorScreen = props => {
 

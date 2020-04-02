@@ -1,6 +1,5 @@
 import React from "react";
 import { Text, StyleSheet, View, Button, TouchableOpacity } from "react-native";
-import { ComponentsScreen } from './ComponentsScreen';
 
 const HomeScreen = ({navigation}) => {
   return (
