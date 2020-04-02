@@ -17,7 +17,11 @@ const ColorScreen = props => {
       renderItem = {({ item }) => {
         return (   
           <View 
-          style={{width: 100, height: 100, backgroundColor: randomRgb() }}/>
+          style={{alignSelf: 'center',
+          marginTop: 10,
+          height: 100, 
+          width: 100, 
+          backgroundColor: randomRgb() }}/>
         )
       }}
       />
