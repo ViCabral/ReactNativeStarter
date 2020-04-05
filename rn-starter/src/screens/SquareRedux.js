@@ -7,13 +7,22 @@ const COLOR_INCREMENT = 20;
 const reducer = (state, action) => {
 
 
-    switch(action.colorToChange){
+    switch(action.type){
         case 'Red':
-            return {...state, Red: state.Red + action.amount};
+            return state.Red + action.payload > 255 || state.Red + action.payload < 0 
+            ? state
+            : {...state, Red: state.Red + action.payload};
+            
         case 'Green':
-            return {...state, Green: state.Green + action.amount};
+            return state.Green + action.payload > 255 || state.Green + action.payload < 0 
+            ? state
+            : {...state, Green: state.Green + action.payload};
+
         case 'Blue':
-            return {...state, Blue: state.Blue + action.amount};
+            return state.Blue + action.payload > 255 || state.Blue + action.payload < 0 
+            ? state
+            : {...state, Blue: state.Blue + action.payload};
+
         default:
             return state;
 
@@ -29,18 +38,18 @@ const SquareRedux = () => {
     return(
      <View>
       <ColorCounter 
-      onIncrease = {() => dispatch({colorToChange: 'Red', amount: COLOR_INCREMENT})}
-      onDecrease = {() => dispatch({colorToChange: 'Red', amount: -1 * COLOR_INCREMENT})}
+      onIncrease = {() => dispatch({type: 'Red', payload: COLOR_INCREMENT})}
+      onDecrease = {() => dispatch({type: 'Red', payload: -1 * COLOR_INCREMENT})}
       color="Red"/>
 
       <ColorCounter 
-      onIncrease = {() => dispatch({colorToChange: 'Green', amount: COLOR_INCREMENT})}
-      onDecrease = {() => dispatch({colorToChange: 'Green', amount: -1 * COLOR_INCREMENT})}
+      onIncrease = {() => dispatch({type: 'Green', payload: COLOR_INCREMENT})}
+      onDecrease = {() => dispatch({type: 'Green', payload: -1 * COLOR_INCREMENT})}
       color="Green"/>
 
       <ColorCounter 
-      onIncrease = {() => dispatch({colorToChange: 'Blue', amount: COLOR_INCREMENT})}
-      onDecrease = {() => dispatch({colorToChange: 'Blue', amount: -1 * COLOR_INCREMENT})}
+      onIncrease = {() => dispatch({type: 'Blue', payload: COLOR_INCREMENT})}
+      onDecrease = {() => dispatch({type: 'Blue', payload: -1 * COLOR_INCREMENT})}
       color="Blue"/>
 
       <View style= {{ 
@@ -48,7 +57,7 @@ const SquareRedux = () => {
         marginTop: 30,
         height: 150, 
         width: 150,
-        backgroundColor: `rgb(${Red},${Green},${Blue})`}}/>
+        backgroundColor: `rgb(${state.Red},${state.Green},${state.Blue})`}}/>
 
      </View>
     );
