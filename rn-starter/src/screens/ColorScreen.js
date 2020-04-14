@@ -11,7 +11,7 @@ const ColorScreen = props => {
       title="Add Color" 
       onPress = {() => setColors([...colors, randomRgb()])}
       />
-      <FlatList
+      <FlatList 
       keyExtractor = {item => item}
       data = {colors}
       renderItem = {({ item }) => {
